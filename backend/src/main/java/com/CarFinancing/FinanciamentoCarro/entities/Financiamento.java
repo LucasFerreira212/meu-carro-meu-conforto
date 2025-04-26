@@ -1,4 +1,4 @@
-package com.CarFinancing.FinanciamentoCarro.entity;
+package com.CarFinancing.FinanciamentoCarro.entities;
 
 import com.CarFinancing.FinanciamentoCarro.enums.StatusFinanciamento;
 import jakarta.persistence.*;
@@ -10,10 +10,13 @@ public class Financiamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
     private Usuario cliente;
 
+    @ManyToOne
     private Usuario funcionario;
 
+    @ManyToOne
     private Usuario gerente;
 
     private double valorEntrada;
