@@ -32,6 +32,17 @@ public class UsuarioController {
         }
     }
 
+    @GetMapping("/{email}")
+    public ResponseEntity<Usuario> buscarPorEmail(@PathVariable String email) {
+        Optional<Usuario> usuario = usuarioService.buscarPorEmail(email);
+
+        if (usuario.isPresent()) {
+            return ResponseEntity.ok(usuario.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @GetMapping("/clientes")
     public ResponseEntity<List<Usuario>> listarClientes() {
         return ResponseEntity.ok(usuarioService.listarClientes());

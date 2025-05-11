@@ -2,10 +2,14 @@ package com.CarFinancing.FinanciamentoCarro.entities;
 
 import com.CarFinancing.FinanciamentoCarro.enums.Papel;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class Usuario {
 
     @Id
